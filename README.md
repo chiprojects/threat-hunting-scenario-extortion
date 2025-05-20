@@ -19,15 +19,17 @@ Management has identified suspicious outbound email activity from a user in resp
 
 ### High-Level Extortion Email IoC Discovery Plan
 
-- **Check `DeviceFileEvents`** 
-- **Check `DeviceProcessEvents`** 
-- **Check `DeviceNetworkEvents`** 
+- **Check `DeviceFileEvents`** for creation files with extensions like `.csv`, `.pdf`, `.txt`, `.zip`, or `.dp` to detect staged sensitive data. 
+- **Check `DeviceProcessEvents`** for any signs of execution of compressed files
+- **Check `DeviceNetworkEvents`** for any signs of outbound connections to mail or mail-related ports
 
 ---
 
 ## Steps Taken
 
 ### 1. Searched the `DeviceFileEvents` Table
+
+Searched for any file extensions commonly used in data exfiltration (e.g., `.csv`, `.pdf`, `.txt`, `.zip`, `.db` and discovered a file named `students.csv` created at `2025-05-12T23:57:37.3164809Z`, along with an extortion note created shortly after at `2025-05-13T00:18:00.6008846Z`. While there's no evidence the extortion message was sent, the `students.csv` file was later compressed using PowerShell at `2025-05-13T00:18:00.6008846Z`, suggesting potential preparation for data exfiltration.
 
 
 
