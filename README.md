@@ -108,45 +108,53 @@ DeviceNetworkEvents
 
 ### 3. File Compression - PowerShell Archive Command
 
-- **Timestamp:** `2024-11-08T22:17:21.6357935Z`
-- **Event:** User "employee" opened the TOR browser. Subsequent processes associated with TOR browser, such as `firefox.exe` and `tor.exe`, were also created, indicating that the browser launched successfully.
-- **Action:** Process creation of TOR browser-related executables detected.
-- **File Path:** `C:\Users\employee\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe`
+- **Timestamp:** `2025-05-13T00:23:42.1783386Z`
+- **Event:** The `students.csv` file was zipped using a PowerShell command, resulting in `data.zip`.
+- **Action:** File compression via PowerShell
+- **Command:** `powershell.exe Compress-Archive -Path C:\Users\ShadowInbox\Desktop\students.csv -DestinationPath C:\Users\ShadowInbox\Desktop\data.zip`
 
-### 4. Network Connection - TOR Network
 
-- **Timestamp:** `2024-11-08T22:18:01.1246358Z`
-- **Event:** A network connection to IP `176.198.159.33` on port `9001` by user "employee" was established using `tor.exe`, confirming TOR browser network activity.
-- **Action:** Connection success.
-- **Process:** `tor.exe`
-- **File Path:** `c:\users\employee\desktop\tor browser\browser\torbrowser\tor\tor.exe`
+### 4. Script Execution - send_extortion.py(1st Attempt)
 
-### 5. Additional Network Connections - TOR Browser Activity
+- **Timestamp:** `2025-05-13T01:21:19.302708Z`
+- **Event:** A Python script named `send_extortion.py` was executed in PowerShell.
+- **Action:** Script execution detected.
+- **Command:** "python.exe" `send_extortion.py`
+- **Initiating Process Path:** C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 
-- **Timestamps:**
-  - `2024-11-08T22:18:08Z` - Connected to `194.164.169.85` on port `443`.
-  - `2024-11-08T22:18:16Z` - Local connection to `127.0.0.1` on port `9150`.
-- **Event:** Additional TOR network connections were established, indicating ongoing activity by user "employee" through the TOR browser.
-- **Action:** Multiple successful connections detected.
+### 5. Network Connection Attempt - Port 1025
 
-### 6. File Creation - TOR Shopping List
+- **Timestamps:** 2025-05-13T01:21:42Z (approx.)
+- **Event:** An attempt was made to connect to port 1025, presumably to send the extortion email.
+- **Action:** Connection attempt detected; failed.
 
-- **Timestamp:** `2024-11-08T22:27:19.7259964Z`
-- **Event:** The user "employee" created a file named `tor-shopping-list.txt` on the desktop, potentially indicating a list or notes related to their TOR browser activities.
-- **Action:** File creation detected.
-- **File Path:** `C:\Users\employee\Desktop\tor-shopping-list.txt`
+### 6. Script Execution - send_extortion.py (Second Attempt)
+
+- **Timestamp:** 2025-05-13T01:23:58Z (approx.)
+- **Event:** The script send_extortion.py was executed again, possibly due to prior failure.
+- **Action:** Reattempt of script execution noted.
+
+### 7. Successful Network Connection - Email Transmission
+
+- **Timestamp:**  2025-05-13T01:24:57.3521978Z
+- **Event:** A successful connection to port 1025 was made using the Python script, aligning with previous script execution.
+- **Action:** Email likely transmitted.
+- **Command:** "python.exe" send_extortion.py
+- **Device:** hr-laptop-101
+- **User:** ShadowInbox
+
 
 ---
 
 ## Summary
 
-The user "employee" on the "threat-hunt-lab" device initiated and completed the installation of the TOR browser. They proceeded to launch the browser, establish connections within the TOR network, and created various files related to TOR on their desktop, including a file named `tor-shopping-list.txt`. This sequence of activities indicates that the user actively installed, configured, and used the TOR browser, likely for anonymous browsing purposes, with possible documentation in the form of the "shopping list" file.
+
 
 ---
 
 ## Response Taken
 
-TOR usage was confirmed on the endpoint `threat-hunt-lab` by the user `employee`. The device was isolated, and the user's direct manager was notified.
+
 
 ---
 
