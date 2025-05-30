@@ -155,7 +155,7 @@ Although no evidence confirms the recipient received the extortion note, the act
 
 ## Response Taken
 
-The `hr-laptop-101` was immediately isolated from the network, and the incident was escalated to the security response team for further in-depth analysis. Upper management was notified about the threat, and all collected data (`students.csv`, `data.zip`, `send_extortion.py`) were collected for review.
+The `hr-laptop-101` was immediately isolated from the network, and the incident was escalated to the security response team for further in-depth analysis. Upper management was notified about the threat, and all collected data (`students.csv`, `data.zip`, `send_extortion.py`) were submitted for review.
 
 
 
