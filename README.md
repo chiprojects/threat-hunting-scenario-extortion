@@ -147,12 +147,16 @@ DeviceNetworkEvents
 ---
 
 ## Summary
+The user "ShadowInbox" on the "hr-laptop-101" device successfully but illegally obtained student data: `students.csv` and proceeded to compress the file using PowerShell in preparation for data exfiltration. Though there were no signs of outreach initially, it was later discovered that a Python script, `send_extortion.py`, was used to send an extortion email asking for a bitcoin ransom. After 2 failed attempts, a successful connection to port 1025 was logged, which aligns with the final script execution, indicating that the email with the extortion content was likely delivered to the target.
 
-
+Although no evidence confirms the recipient received the extortion note, the activity pattern and successful connection indicate the attacker's intent to exfiltrate sensitive data.
 
 ---
 
 ## Response Taken
+
+The `hr-laptop-101` was immediately isolated from the network, and the incident was escalated to the security response team for further in-depth analysis. Upper management was notified about the threat, and all collected data (`students.csv`, `data.zip`, `send_extortion.py`) were collected for review.
+
 
 
 
